@@ -1,6 +1,7 @@
 import { Progress } from "@/components/ui/progress";
 import { Card } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
+import ConnectForm from "@/components/ConnectForm";
 
 export default function Dashboard() {
   const constructionPhases = [
@@ -137,9 +138,10 @@ export default function Dashboard() {
                 <p className="text-neutral-400">Завершение производственного блока</p>
               </div>
             </div>
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300 uppercase tracking-wide">
-              Внести вклад
-            </button>
+            <ConnectForm 
+              triggerClassName="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300 uppercase tracking-wide"
+              triggerText="Внести вклад"
+            />
           </div>
         </Card>
       </div>

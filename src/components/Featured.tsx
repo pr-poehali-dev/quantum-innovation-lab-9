@@ -1,3 +1,5 @@
+import ConnectForm from "@/components/ConnectForm";
+
 export default function Featured() {
   return (
     <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center min-h-screen px-6 py-12 lg:py-0 bg-white">
@@ -14,9 +16,10 @@ export default function Featured() {
           Отслеживайте прогресс строительства, статистику ресурсов и вклад каждого командира.
           Получайте уведомления о важных этапах и планируйте развитие колонии.
         </p>
-        <button className="bg-black text-white border border-black px-4 py-2 text-sm transition-all duration-300 hover:bg-white hover:text-black cursor-pointer w-fit uppercase tracking-wide">
-          Начать отслеживание
-        </button>
+        <ConnectForm 
+          triggerClassName="bg-black text-white border border-black px-4 py-2 text-sm transition-all duration-300 hover:bg-white hover:text-black cursor-pointer w-fit uppercase tracking-wide"
+          triggerText="Начать отслеживание"
+        />
       </div>
     </div>
   );
