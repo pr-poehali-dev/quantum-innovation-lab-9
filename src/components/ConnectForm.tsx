@@ -15,10 +15,10 @@ export default function ConnectForm({ triggerClassName, triggerText = "Нача�
   const [isOpen, setIsOpen] = useState(false);
   const [formData, setFormData] = useState({
     commanderName: "",
-    apiKey: "",
     colonyName: "",
     system: "",
     platform: "pc",
+    eddn: true,
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -41,7 +41,7 @@ export default function ConnectForm({ triggerClassName, triggerText = "Нача�
             Подключение к Elite Dangerous
           </DialogTitle>
           <DialogDescription className="text-neutral-400">
-            Введите данные вашего аккаунта для начала отслеживания прогресса колонии
+            Подключение через EDDN — открытая сеть обмена данными Elite Dangerous. API ключи не требуются.
           </DialogDescription>
         </DialogHeader>
         
@@ -60,31 +60,26 @@ export default function ConnectForm({ triggerClassName, triggerText = "Нача�
             />
           </div>
 
-          <div className="space-y-2">
-            <Label htmlFor="apiKey" className="text-white flex items-center gap-2">
-              API ключ Frontier
-              <a 
-                href="https://www.frontierstore.net/developer" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-xs text-orange-400 hover:text-orange-300 flex items-center gap-1"
-              >
-                <Icon name="ExternalLink" size={12} />
-                Получить ключ
-              </a>
-            </Label>
-            <Input
-              id="apiKey"
-              type="password"
-              placeholder="••••••••••••••••••••••••••••"
-              value={formData.apiKey}
-              onChange={(e) => setFormData({ ...formData, apiKey: e.target.value })}
-              className="bg-neutral-800 border-neutral-700 text-white placeholder:text-neutral-500"
-              required
-            />
-            <p className="text-xs text-neutral-500">
-              Ключ хранится локально и используется только для получения данных вашей колонии
-            </p>
+          <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg p-4">
+            <div className="flex items-start gap-3">
+              <Icon name="Info" className="text-orange-400 mt-0.5" size={20} />
+              <div>
+                <h4 className="text-orange-400 font-semibold mb-1 font-['Rajdhani']">Подключение через EDDN</h4>
+                <p className="text-xs text-neutral-400 leading-relaxed">
+                  Elite Dangerous Data Network — это открытая сеть для обмена данными между командирами.
+                  Не требует API ключей и работает на всех платформах.
+                </p>
+                <a 
+                  href="https://eddn.edcd.io/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-xs text-orange-400 hover:text-orange-300 flex items-center gap-1 mt-2"
+                >
+                  <Icon name="ExternalLink" size={12} />
+                  Подробнее о EDDN
+                </a>
+              </div>
+            </div>
           </div>
 
           <div className="space-y-2">
