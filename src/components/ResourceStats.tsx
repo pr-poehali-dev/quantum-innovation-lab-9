@@ -67,33 +67,33 @@ export default function ResourceStats() {
   };
 
   return (
-    <div className="min-h-screen bg-white py-20 px-6">
+    <div className="min-h-screen bg-black py-20 px-6 border-t border-orange-500/10">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-900 mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-orange-500 mb-4 font-['Orbitron'] tracking-wider uppercase">
             СТАТИСТИКА РЕСУРСОВ
           </h2>
-          <p className="text-xl text-neutral-600">Детальный список всех необходимых материалов для строительства</p>
+          <p className="text-lg text-neutral-500 font-['Rajdhani'] tracking-wide">МАТЕРИАЛЫ ДЛЯ СТРОИТЕЛЬСТВА КОЛОНИИ</p>
         </div>
 
         <div className="space-y-12">
           {resources.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+            <div key={categoryIndex} className="bg-neutral-950/50 rounded-none p-6 border border-orange-500/20">
               <div className="flex items-center gap-3 mb-6">
-                <Icon name="Package" className="text-neutral-700" size={24} />
-                <h3 className="text-2xl font-bold text-neutral-900">{category.category}</h3>
+                <Icon name="Package" className="text-orange-500" size={24} />
+                <h3 className="text-xl font-bold text-orange-400 font-['Rajdhani'] tracking-wider uppercase">{category.category}</h3>
               </div>
 
               <div className="overflow-x-auto">
                 <Table>
                   <TableHeader>
-                    <TableRow className="border-neutral-300">
-                      <TableHead className="text-neutral-900 font-semibold">Материал</TableHead>
-                      <TableHead className="text-neutral-900 font-semibold">Доставлено</TableHead>
-                      <TableHead className="text-neutral-900 font-semibold">Требуется</TableHead>
-                      <TableHead className="text-neutral-900 font-semibold">Прогресс</TableHead>
-                      <TableHead className="text-neutral-900 font-semibold">Приоритет</TableHead>
-                      <TableHead className="text-neutral-900 font-semibold text-right">Осталось</TableHead>
+                    <TableRow className="border-orange-500/20">
+                      <TableHead className="text-orange-400 font-semibold font-['Rajdhani'] tracking-wider uppercase">Материал</TableHead>
+                      <TableHead className="text-orange-400 font-semibold font-['Rajdhani'] tracking-wider uppercase">Доставлено</TableHead>
+                      <TableHead className="text-orange-400 font-semibold font-['Rajdhani'] tracking-wider uppercase">Требуется</TableHead>
+                      <TableHead className="text-orange-400 font-semibold font-['Rajdhani'] tracking-wider uppercase">Прогресс</TableHead>
+                      <TableHead className="text-orange-400 font-semibold font-['Rajdhani'] tracking-wider uppercase">Приоритет</TableHead>
+                      <TableHead className="text-orange-400 font-semibold font-['Rajdhani'] tracking-wider uppercase text-right">Осталось</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
@@ -102,12 +102,12 @@ export default function ResourceStats() {
                       const remaining = item.required - item.delivered;
                       
                       return (
-                        <TableRow key={itemIndex} className="border-neutral-200">
-                          <TableCell className="font-medium text-neutral-900">{item.name}</TableCell>
-                          <TableCell className="text-neutral-700">
+                        <TableRow key={itemIndex} className="border-orange-500/10">
+                          <TableCell className="font-medium text-neutral-300 font-['Rajdhani']">{item.name}</TableCell>
+                          <TableCell className="text-neutral-400 font-['Rajdhani']">
                             {item.delivered.toLocaleString()} {item.unit}
                           </TableCell>
-                          <TableCell className="text-neutral-700">
+                          <TableCell className="text-neutral-400 font-['Rajdhani']">
                             {item.required.toLocaleString()} {item.unit}
                           </TableCell>
                           <TableCell className="min-w-[200px]">

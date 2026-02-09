@@ -25,17 +25,17 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-neutral-900 to-black py-20 px-6">
+    <div className="min-h-screen bg-black py-20 px-6 border-t border-orange-500/10">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-orange-500 mb-4 font-['Orbitron'] tracking-wider uppercase">
             ПРОГРЕСС СТРОИТЕЛЬСТВА
           </h2>
-          <p className="text-xl text-neutral-400">Колония "Arcturus Prime" • Система HD 85512</p>
+          <p className="text-lg text-neutral-500 font-['Rajdhani'] tracking-wide">КОЛОНИЯ ARCTURUS PRIME • HD 85512</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-          <Card className="bg-neutral-900/50 border-orange-500/20 p-6 backdrop-blur-sm">
+          <Card className="bg-neutral-950/80 border-orange-500/30 p-6 backdrop-blur-sm">
             <div className="flex items-center gap-4 mb-4">
               <div className="w-12 h-12 rounded-full bg-orange-500/20 flex items-center justify-center">
                 <Icon name="Timer" className="text-orange-500" size={24} />
